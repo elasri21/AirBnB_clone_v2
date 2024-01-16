@@ -6,7 +6,7 @@ from os import getenv
 from sqlalchemy.orm import relationship
 
 
-class State(BaseModel):
+class State(BaseModel, Base):
     """ State class """
     __tablename__ = 'states'
     if getenv('HBNB_TYPE_STORAGE') == 'db':
