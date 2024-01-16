@@ -9,5 +9,5 @@ class Amenity(BaseModel, Base):
     Args:
         BaseModel: class to inherits from
         Base: class to inherits from"""
-    __tabename = 'amenities'
+    __tablename__ = 'amenities'
     name = Column(String(128), nullable=False)
