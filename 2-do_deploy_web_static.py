@@ -16,9 +16,10 @@ def do_pack():
             datetime.now().strftime(date_format))
         local('tar -cvzf {} web_static'.format(arch_path))
         print('web_static packed: {} -> {}'.format(arch_path,
-               os.path.getsize(arch_path)))
-    except:
+              os.path.getsize(arch_path)))
+    except TypeError:
         return None
+
 
 def do_deploy(archive_path):
     """distributes an archive to your web servers"""
@@ -38,5 +39,5 @@ def do_deploy(archive_path):
         run('ln -s {} /data/web_static/current'.format(r_path))
         print('New version deployed!')
         return True
-    except:
+    except TypeError:
         return False
