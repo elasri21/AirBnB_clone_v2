@@ -15,6 +15,6 @@ def do_pack():
             datetime.now().strftime(date_format))
         local('tar -cvzf {} web_static'.format(arch_path))
         print('web_static packed:{} -> {}'.format(arch_path,
-            os.path.getsize(arch_path)))
+              os.path.getsize(arch_path)))
     except TypeError:
         None
