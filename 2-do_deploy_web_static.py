@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """script that distributes an archive to your web servers"""
-from fabric.api import *
-from datetime import datetime
+from fabric.api import put, run, env
+from os.path import exists
 import os
 env.hosts = ['34.207.120.230', '100.25.138.49']
 env.user = 'ubuntu'
