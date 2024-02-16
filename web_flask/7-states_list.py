@@ -14,7 +14,7 @@ def states_list():
 
 
 @app.teardown_appcontext
-def teardon_db(exception):
+def teardown_db(exception):
     """handles tearing down of db"""
     storage.close()
 
