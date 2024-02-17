@@ -9,13 +9,11 @@ import models
 
 class State(BaseModel, Base):
     """ State class """
+    __tablename__ = 'states'
     if getenv('HBNB_TYPE_STORAGE') == 'db':
-        __tablename__ = 'states'
         name = Column(String(128), nullable=False)
         cities = relationship('City', cascade='all, delete', backref='state')
     else:
-        name = ''
-
         @property
         def cities(self):
             '''
@@ -30,7 +28,3 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
-
-    def __init__(self, *args, **kwargs):
-        """initializes state"""
-        super().__init__(*args, **kwargs)
