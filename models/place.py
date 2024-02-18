@@ -5,6 +5,9 @@ from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from os import getenv
 from models.amenity import Amenity
+from models.city import City
+from models.user import User
+import models
 
 
 place_amenity = Table('place_amenity', Base.metadata,
