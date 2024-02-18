@@ -23,6 +23,8 @@ def hbnb_filters():
     """ hbnb_filters method: display HTML page state & city from DBStorage """
     states = storage.all(State).values()
     ameninities = storage.all(Amenity).values()
+    states = sorted(list(states), key=lambda x: x.name)
+    ameninities = sorted(list(ameninities), key=lambda x: x.name)
     return (render_template('10-hbnb_filters.html', states=states,
                             amenities=ameninities))
 
