@@ -34,8 +34,8 @@ def hbnb_filters():
     places = sorted(list(places), key=lambda x: x.name)
     users = sorted(list(users), key=lambda x: x.name)
     return (render_template('100-hbnb.html', states=states,
-                            amenities=ameninities, reviews=reviews
-                            cities=cities, places=places
+                            amenities=ameninities, reviews=reviews,
+                            cities=cities, places=places,
                             users=users))
 
 
